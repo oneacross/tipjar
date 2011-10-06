@@ -1,2 +1,6 @@
-<h1>Requests#index</h1>
-<p>Find me in app/views/requests/index.html.erb</p>
+<% for request in @requests %>
+  <%=h request.band_name %>
+  <%=h request.place %>
+  <div>1 request</div>
+  <div><%=h request.money %> dollars</div>
+<% end %>
