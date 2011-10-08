@@ -1,0 +1,13 @@
+<%= form_for @request do |req| %>
+
+  <%= req.label :band_name %>:
+  <%= req.text_field :band_name %><br />
+
+  <%= req.label :place %>:
+  <%= req.text_field :place %><br />
+
+  <%= req.label :money %>:
+  <%= req.text_field :money %><br />
+
+  <%= req.submit %>
+<% end %>
