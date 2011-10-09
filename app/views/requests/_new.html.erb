@@ -1,13 +1,14 @@
 <%= form_for @request do |req| %>
 
-  <%= req.label :band_name %>:
-  <%= req.text_field :band_name %><br />
+  <div>
+    I would pay 
+    <%= req.text_field :money, :size => 4 %> dollars
+    to see
+    <%= req.text_field :band_name, :value => '{this awesome band}' %>
+    play in
+    <%= req.text_field :place, :value => '{my location}' %>
 
-  <%= req.label :place %>:
-  <%= req.text_field :place %><br />
+    <%= submit_tag 'Make Request' %>
+  </div>
 
-  <%= req.label :money %>:
-  <%= req.text_field :money %><br />
-
-  <%= req.submit %>
 <% end %>
