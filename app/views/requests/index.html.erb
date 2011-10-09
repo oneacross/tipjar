@@ -4,9 +4,15 @@
 
 <p>List of requests</p>
 
-<% for request in @requests %>
-  <%=h request.band_name %>
-  <%=h request.place %>
-  <div>1 request</div>
-  <div><%=h request.money %> dollars</div>
+<% for req in @aggregate_requests %>
+  <%=h req.band_name %>
+  <%=h req.place %>
+  <div><%=h req.count %>
+    <% if req.count == 1 %>
+      request
+    <% else %>
+      requests
+    <% end %> 
+  </div>
+  <div><%=h req.money %> dollars</div>
 <% end %>

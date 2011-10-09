@@ -10,7 +10,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111006053445) do
+ActiveRecord::Schema.define(:version => 20111008234859) do
+
+  create_table "aggregate_requests", :force => true do |t|
+    t.string   "band_name"
+    t.string   "place"
+    t.integer  "money"
+    t.integer  "count"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "requests", :force => true do |t|
     t.string   "band_name"
