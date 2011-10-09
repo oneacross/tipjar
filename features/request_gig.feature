@@ -19,3 +19,19 @@ Feature: Request a gig
     And I should see "Oakland, CA"
     And I should see "2 requests"
     And I should see "15 dollars"
+
+  @wip
+  Scenario: A user can delete a request
+
+  @wip
+  Scenario: User can sign up with google account
+
+  @wip
+  Scenario: User can view their requests
+
+  @wip
+  Scenario: User can delete a request
+
+  @wip
+  Scenario: User can make a request
+
