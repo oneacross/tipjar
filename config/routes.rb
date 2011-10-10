@@ -6,6 +6,12 @@ Tipjar::Application.routes.draw do
 
   resources :requests
 
+  resources :openid do
+    collection do
+      post 'complete'
+    end
+  end
+
   root :to => 'requests#index'
 
 end
