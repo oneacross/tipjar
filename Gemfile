@@ -16,6 +16,8 @@ end
 
 gem 'jquery-rails'
 
+gem 'ruby-openid'
+
 group :test, :development do
     gem 'rspec'
     gem 'rspec-rails'

@@ -6,9 +6,9 @@ Tipjar::Application.routes.draw do
 
   resources :requests
 
-  resources :openid do
+  resources :openids do
     collection do
-      post 'complete'
+      get 'complete'
     end
   end
 

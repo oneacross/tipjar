@@ -1,3 +1,7 @@
+<% if flash[:error] %>
+  <p class="error"><%= flash[:error] %></p>
+<% end %>
+
 <p>Requests a band to play in your area!</p>
 
 <%= render "new" %>
