@@ -25,6 +25,7 @@ ActiveRecord::Schema.define(:version => 20111011025233) do
     t.string   "band_name"
     t.string   "place"
     t.integer  "money"
+    t.integer  "user_id"
     t.datetime "created_at"
     t.datetime "updated_at"
   end

@@ -23,4 +23,8 @@ describe OpenidsController do
     openids_path.should == "/openids"
   end
 
+  xit "can call complete" do
+    subject.complete
+  end
+
 end

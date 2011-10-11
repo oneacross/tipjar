@@ -4,7 +4,7 @@ Tipjar::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :requests
+  resources :requests, :users
 
   resources :openids do
     collection do

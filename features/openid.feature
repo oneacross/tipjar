@@ -3,6 +3,7 @@ Feature: Log in with OpenID
   As a user
   I want to use my OpenID
 
+  @wip
   Scenario: Log in with Google OpenID
     Given I login with Google's OpenID url
     And I enter my credentials

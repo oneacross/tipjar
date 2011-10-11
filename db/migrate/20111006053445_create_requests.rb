@@ -4,6 +4,7 @@ class CreateRequests < ActiveRecord::Migration
       t.string :band_name
       t.string :place
       t.integer :money
+      t.references :user
 
       t.timestamps
     end

@@ -35,21 +35,17 @@ class OpenidsController < ApplicationController
 
       session[:openid] = identity_url
 
-      qry = User.find_by_identity_url(identity_url)
-      if qry.any?
-        #  qry.first
-      else
+      user = User.find_by_identity_url(identity_url)
+      if !user
         # sign up the new user
         ax_rsp = OpenID::AX::FetchResponse.from_success_response(response, false)
         firstname = ax_rsp.get('http://axschema.org/namePerson/first')
 
-        User.new(:identity_url => identity_url, :firstname => firstname)
+        user = User.create!(:identity_url => identity_url,
+                            :firstname => firstname)
       end
 
-      # TODO: this is not an error
-      flash[:error] = "Hello #{firstname}!!"
-
-      redirect_to user_url
+      redirect_to :controller => 'users', :action => 'show', :id => user.id
       return
     elsif response.status == OpenID::Consumer::SETUP_NEEDED
       flash[:error] = 'Could not log on with your OpenID: SETUP_NEEDED'

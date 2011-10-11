@@ -1,9 +1,10 @@
-Given /^I request (.*) to play in (.*) for (\d+) dollars$/ do |band, place, money|
-  visit new_request_path
+Given /^I request (.*) to play in (.*) for (\d+) bucks$/ do |band, place, money|
+  User.create!(:identity_url => "abcd", :firstname => "Matt")
+  visit '/users/1'
   fill_in 'request_band_name', :with => band
   fill_in 'request_place', :with => place
   fill_in 'request_money', :with => money
-  click_button 'Create Request' 
+  click_button 'Make Request' 
 end
 
 Given /^I login with Google's OpenID url$/ do

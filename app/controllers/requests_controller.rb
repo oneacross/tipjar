@@ -16,6 +16,7 @@ class RequestsController < ApplicationController
 
   def create
     @request = Request.new(params[:request])
+    @request.user = User.find_by_identity_url(session[:openid])
 
     # Detect if there is an existing aggregate
     # request for this band and place
@@ -38,7 +39,7 @@ class RequestsController < ApplicationController
     end
 
     if @request.save
-      redirect_to requests_index_path
+      redirect_to '/users/1'
     else
       render :action => 'new'
     end

@@ -2,21 +2,19 @@
   <p class="error"><%= flash[:error] %></p>
 <% end %>
 
-<p>Requests a band to play in your area!</p>
-
-<%= render "new" %>
-
-<p>List of requests</p>
+<p>The request list</p>
 
 <% for req in @aggregate_requests %>
-  <%=h req.band_name %>
-  <%=h req.place %>
-  <div><%=h req.count %>
+  <div>
+    <%=h req.count %>
     <% if req.count == 1 %>
-      request
+      person wants
     <% else %>
-      requests
+      people want
     <% end %> 
+    to see
+    <%=h req.band_name %>
+    play in
+    <%=h req.place %>
   </div>
-  <div><%=h req.money %> dollars</div>
 <% end %>

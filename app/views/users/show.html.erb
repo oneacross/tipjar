@@ -1,3 +1,7 @@
+<div>Hello <%=h @user.firstname %></div>
+
+<div>Make a new request:</div>
+
 <%= form_for @request do |req| %>
 
   <div>
@@ -11,4 +15,17 @@
     <%= submit_tag 'Make Request' %>
   </div>
 
+<% end %>
+
+<div>Your requests:</div>
+
+<% for req in @user.requests %>
+  <div>
+    I would pay
+    <%= req.money %> bucks
+    to see
+    <%= req.band_name %>
+    play in
+    <%= req.place %>
+  </div>
 <% end %>
