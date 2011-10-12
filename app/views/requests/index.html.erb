@@ -2,6 +2,8 @@
   <p class="error"><%= flash[:error] %></p>
 <% end %>
 
+<%= link_to "Login/Signup", new_openid_path %>
+
 <p>The request list</p>
 
 <% for req in @aggregate_requests %>
