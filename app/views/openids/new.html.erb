@@ -1,3 +1,1 @@
-<%= form_tag openids_path do %>
-  <%= text_field_tag 'openid_url' %> <%= submit_tag 'Login' %>
-<% end %>
+<%= link_to "Login with Google", openids_path(:openid_url => 'https://www.google.com/accounts/o8/id'), :method => :post %>
