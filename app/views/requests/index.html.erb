@@ -17,22 +17,5 @@
 <h2>The request list:</h2>
 
 <% for req in @aggregate_requests %>
-  <div class="request">
-
-    <span class="count">
-      <%=h req.count %>
-      <% if req.count == 1 %>
-        person </span> wants
-      <% else %>
-        people </span> want
-      <% end %> 
-
-    to see
-
-    <span class="band"> <%=h req.band_name %> </span>
-
-    play in
-
-    <span class="place"> <%=h req.place %> </span>
-  </div>
+  <%= render :partial => "item", :locals => { :req => req, :intro_who => req.who, :intro_verb => req.verb } %>
 <% end %>

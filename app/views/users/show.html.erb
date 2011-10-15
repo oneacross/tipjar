@@ -1,4 +1,4 @@
-<div>Hello <%=h @user.firstname %></div>
+<div>Hello <%= @user.firstname %></div>
 
 <div id="user-status">
   <%= link_to "View all requests", root_url %>
@@ -9,7 +9,7 @@
 <%= form_for @request do |req| %>
 
   <div class="request">
-    <span class="count"> I </span>
+    <span class="intro"> I </span>
     would pay 
     <%= req.text_field :money, :size => 4 %> bucks
     to see
@@ -25,13 +25,5 @@
 <br />
 
 <% for req in @user.requests %>
-  <div class="request">
-    <span class="count"> You </span>
-    would pay
-    <span class="money"> <%= req.money %> bucks </span>
-    to see
-    <span class="band"> <%= req.band_name %> </span>
-    play in
-    <span class="place"> <%= req.place %> </span>
-  </div>
+  <%= render :partial => "requests/item", :locals => { :req => req, :intro_who => "You", :intro_verb => "would pay" } %>
 <% end %>
