@@ -26,3 +26,7 @@ group :test, :development do
     gem 'cucumber'
     gem 'cucumber-rails'
 end
+
+# Required by Heroku
+gem 'pg'
+
