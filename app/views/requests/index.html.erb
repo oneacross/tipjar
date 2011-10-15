@@ -14,19 +14,25 @@
   <% end %>
 </div>
 
-<p>The request list</p>
+<h2>The request list:</h2>
 
 <% for req in @aggregate_requests %>
-  <div>
-    <%=h req.count %>
-    <% if req.count == 1 %>
-      person wants
-    <% else %>
-      people want
-    <% end %> 
+  <div class="request">
+
+    <span class="count">
+      <%=h req.count %>
+      <% if req.count == 1 %>
+        person </span> wants
+      <% else %>
+        people </span> want
+      <% end %> 
+
     to see
-    <%=h req.band_name %>
+
+    <span class="band"> <%=h req.band_name %> </span>
+
     play in
-    <%=h req.place %>
+
+    <span class="place"> <%=h req.place %> </span>
   </div>
 <% end %>

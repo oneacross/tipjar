@@ -6,12 +6,11 @@
   <%= link_to "Logout", logout_path %>
 </div>
 
-<div>Make a new request:</div>
-
 <%= form_for @request do |req| %>
 
-  <div>
-    I would pay 
+  <div class="request">
+    <span class="count"> I </span>
+    would pay 
     <%= req.text_field :money, :size => 4 %> bucks
     to see
     <%= req.text_field :band_name, :value => '{this awesome band}' %>
@@ -26,12 +25,13 @@
 <br />
 
 <% for req in @user.requests %>
-  <div>
-    You would pay
-    <%= req.money %> bucks
+  <div class="request">
+    <span class="count"> You </span>
+    would pay
+    <span class="money"> <%= req.money %> bucks </span>
     to see
-    <%= req.band_name %>
+    <span class="band"> <%= req.band_name %> </span>
     play in
-    <%= req.place %>
+    <span class="place"> <%= req.place %> </span>
   </div>
 <% end %>

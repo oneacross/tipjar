@@ -7,3 +7,41 @@
   top: 10px;
   right: 10px;
 }
+
+.request {
+  font: {
+    family: "Helvetica";
+    size: 25px;
+  }
+
+  border: {
+    style: solid;
+    width: 2px;
+  }
+
+  display: inline-block;
+
+  padding-top: 3px;
+  padding-bottom: 3px;
+  padding-left: 10px;
+  padding-right: 10px;
+
+  margin-top: 7px;
+
+  .count {
+    color: brown;
+  }
+
+  .money {
+    color: green;
+  }
+
+  .band {
+    color: blue;
+  }
+
+  .place {
+    color: purple;
+  }
+}
+
