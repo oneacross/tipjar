@@ -25,5 +25,6 @@
 <br />
 
 <% for req in @user.requests %>
-  <%= render :partial => "requests/item", :locals => { :req => req, :intro_who => "You", :intro_verb => "would pay" } %>
+  <%= render :partial => "requests/item", :locals => { :req => req, :intro_who => "You", :intro_verb => req.verb } %>
+  <br />
 <% end %>

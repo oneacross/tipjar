@@ -18,4 +18,5 @@
 
 <% for req in @aggregate_requests %>
   <%= render :partial => "item", :locals => { :req => req, :intro_who => req.who, :intro_verb => req.verb } %>
+  <br />
 <% end %>
