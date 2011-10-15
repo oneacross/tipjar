@@ -45,6 +45,8 @@ class OpenidsController < ApplicationController
                             :firstname => firstname)
       end
 
+      session[:user_id] = user.id
+      User.logged_in()
       redirect_to :controller => 'users', :action => 'show', :id => user.id
       return
     elsif response.status == OpenID::Consumer::SETUP_NEEDED

@@ -1,5 +1,11 @@
 <div>Hello <%=h @user.firstname %></div>
 
+<div id="user-status">
+  <%= link_to "View all requests", root_url %>
+  /
+  <%= link_to "Logout", logout_path %>
+</div>
+
 <div>Make a new request:</div>
 
 <%= form_for @request do |req| %>

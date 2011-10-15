@@ -5,4 +5,9 @@ class UsersController < ApplicationController
     @request = Request.new
   end
 
+  def logout
+    session.delete(:openid)
+    redirect_to root_url
+  end
+
 end

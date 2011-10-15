@@ -6,6 +6,8 @@ Tipjar::Application.routes.draw do
 
   resources :requests, :users
 
+  match 'logout' => 'users#logout'
+
   resources :openids do
     collection do
       get 'complete'

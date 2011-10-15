@@ -4,7 +4,15 @@
 
 <%= image_tag("/images/Logo.jpg") %>
 
-<%= link_to "Login/Signup", new_openid_path %>
+<div id="user-status">
+  <% if logged_in %>
+    <%= link_to "Your requests", user_url(user_id) %>
+    /
+    <%= link_to "Logout", logout_path %>
+  <% else %>
+    <%= link_to "Login/Signup", new_openid_path %>
+  <% end %>
+</div>
 
 <p>The request list</p>
 
