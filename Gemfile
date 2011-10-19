@@ -2,8 +2,6 @@ source 'http://rubygems.org'
 
 gem 'rails', '3.1.0'
 
-gem 'sqlite3'
-
 gem 'json'
 
 # Gems used only for assets and not required
@@ -25,6 +23,7 @@ group :test, :development do
     gem 'database_cleaner'
     gem 'cucumber'
     gem 'cucumber-rails'
+    gem 'sqlite3'
 end
 
 group :production do
